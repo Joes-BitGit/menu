@@ -4,12 +4,16 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
-  const [size, setSize] = useState("Size");
+  const [size, setSize] = useState("N/A");
   const [menu, setMenu] = useState([]);
+  const [display, setDisplay] = useState(false);
 
   const handleSubmit = (Event) => {
     setMenu([...menu, { name, price, category, size }]);
-    console.log(menu);
+    setName("");
+    setPrice("");
+    setCategory("");
+    setSize("N/A");
     Event.preventDefault();
   };
 
@@ -29,6 +33,11 @@ function App() {
     setSize(Event.currentTarget.value);
   };
 
+  const handleDisplayMenu = (Event) => {
+    Event.preventDefault();
+    setDisplay(!display);
+  };
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -39,6 +48,7 @@ function App() {
             name="name"
             value={name}
             onInput={handleNameInput}
+            required
           />
         </label>
         <br />
@@ -49,6 +59,7 @@ function App() {
             name="price"
             value={price}
             onInput={handlePriceInput}
+            required
           />
         </label>
         <br />
@@ -59,6 +70,7 @@ function App() {
             name="category"
             value={category}
             onInput={handleCategoryInput}
+            required
           />
         </label>
         <br />
@@ -71,13 +83,15 @@ function App() {
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
-            <option value="null">N/A</option>
+            <option defaultValue="null">N/A</option>
           </select>
         </label>
         <br />
         <button type="submit">Submit</button>
       </form>
-      {JSON.stringify(menu)}
+      <button onClick={handleDisplayMenu}>Display Menu</button>
+      <br />
+      {display ? JSON.stringify(menu, null, 2) : null}
     </div>
   );
 }
