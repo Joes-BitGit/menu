@@ -1,2 +1,4 @@
 created db
 created table
+installed packages for server: pg, cors, express, nodemon, dotenv
+NEXT STEP CONNECT DB TO SERVER also lookup POOL
