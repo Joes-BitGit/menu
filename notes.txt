@@ -3,4 +3,5 @@ created table
 installed packages for server: pg, cors, express, nodemon, dotenv
 connected db to express server code 
 Added route for getting all items and create a menu items
-NEXT STEP: Finish Testing the routes
+Added route for deleting, getting, and updating an items
+NEXT UP: CREATE THE DESIGN OF THE UI, COMPONENT PLANNING: THINKING IN REACT https://reactjs.org/docs/thinking-in-react.html
