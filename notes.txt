@@ -1,4 +1,6 @@
 created db
 created table
 installed packages for server: pg, cors, express, nodemon, dotenv
-NEXT STEP CONNECT DB TO SERVER also lookup POOL
+connected db to express server code 
+Added route for getting all items and create a menu items
+NEXT STEP: Finish Testing the routes
