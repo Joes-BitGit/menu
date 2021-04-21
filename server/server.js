@@ -34,11 +34,16 @@ app.get("/api/v1/menu", async (req, res) => {
 
 // create a menu item
 app.post("/api/v1/menu", async (req, res) => {
+  // allows the query to accept 3 req and fills in the size
+  if (req.body.size === undefined) {
+    req.body.size = "Not Applicable";
+  }
   try {
     const results = await db.query(
-      "INSERT INTO menu(item, price, category, size) VALUES ($1,$2,$3,$4) returning *;",
+      "INSERT INTO menu(item, price, category, size) VALUES ($1,$2,$3, $4) RETURNING *;",
       [req.body.item, req.body.price, req.body.category, req.body.size]
     );
+
     res.status(201).json({
       status: "success",
       menu_item: results.rows[0],
