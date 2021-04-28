@@ -26,7 +26,7 @@ const SearchBar = (props) => {
         </p>
       </form>
       <button>SHOW ALL</button>
-      {props.item}
+      <p>{props.item}</p>
     </div>
   );
 };
