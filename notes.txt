@@ -9,7 +9,7 @@ Server/ back end
 
 Client/front end
   Sketch a design for the front end
-  Think in react(Componenet planning and frontend build):
+  Thinking in react(Componenet planning and frontend build):
     1. start w/ a mock
     2. break the UI into a heirarchy
     3. build a static version
