@@ -1,21 +1,14 @@
-import React, { useState } from "react";
-import SearchBar from "./components/SearchBar.jsx";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./components/Routes.jsx";
 import NavBar from "./components/NavBar.jsx";
-import Footer from "./components/Footer.jsx";
+
 const App = () => {
-  const [item, setItem] = useState("");
-
-  const handleItemInput = (Event) => {
-    setItem(Event.currentTarget.value);
-  };
-
   return (
-    <div>
+    <Router>
       <NavBar />
-      <SearchBar item={item} handleItemInput={handleItemInput} />
-      <br />
-      <Footer />
-    </div>
+      <Routes />
+    </Router>
   );
 };
 
