@@ -16,7 +16,8 @@ Client/front end
     4. identify the minimal but complete representation of UI state
     5. Identify where your state should live
     6. Add inverse Data flow
-  NEXT UP: Continue building the static version 
+  Continue building the static version: Avoiding adding state
+  Add in the extra route pages
 
   
 
