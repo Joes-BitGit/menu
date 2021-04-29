@@ -1,14 +1,15 @@
 import React from "react";
 
-const ItemCard = () => {
+const ItemCard = (props) => {
   return (
     <>
       <button>EDIT</button>
       <button>X</button>
-      <div>Name</div>
-      <div>Category</div>
-      <div className="">SIZE</div>
-      <div className="">price</div>
+      <div>Name: {props.name}</div>
+      <div>Category: {props.category}</div>
+      <div className="">SIZE: {props.size} </div>
+      <div className="">price: {props.price}</div>
+      <br />
     </>
   );
 };
