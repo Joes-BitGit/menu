@@ -7,13 +7,13 @@ const SearchBar = (props) => {
       <form>
         <input
           type="text"
-          placeholder="ITEM"
+          placeholder="ITEM SEARCH"
           value={props.item}
           onInput={props.handleItemInput}
         />
         <p>
-          <select name="category">
-            <option selected disabled value="category">
+          <select defaultValue="category">
+            <option disabled value="category">
               CATEGORY
             </option>
             <option value="meat">Meat</option>
@@ -25,7 +25,7 @@ const SearchBar = (props) => {
           </select>
         </p>
       </form>
-      <button>SHOW ALL</button>
+
       <p>{props.item}</p>
     </div>
   );
