@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div>
       <SearchBar item={item} handleItemInput={handleItemInput} />
-      <ItemTable />
+      <ItemTable item={item} />
       <br />
       <Footer />
     </div>
