@@ -22,8 +22,8 @@ Client/front end
   Access data from the backend (Context API for state management?)
     Create Axios instance to generate a base url and config
     With useState to capture the data on mount with useEffect (Temporary Solution)
-    Make show all button work
-    NEXT UP: implement context api for state management of the data fetching
+    implement context api for state management of the data fetching
+  NEXT UP: Fix search bar issue
 
   
 
