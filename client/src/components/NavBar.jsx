@@ -4,16 +4,13 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <h1>La Costa Menu</h1>
+      <h1>La Costa</h1>
       <ul>
         <li>
-          <Link to="/">Home Page</Link>
+          <Link to="/">HOME</Link>
         </li>
         <li>
-          <Link to="/add">Add Page</Link>
-        </li>
-        <li>
-          <Link to="/update">Update Page</Link>
+          <Link to="/add">ADD</Link>
         </li>
       </ul>
     </div>
