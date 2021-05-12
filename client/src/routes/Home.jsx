@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 
-import Footer from "../components/Footer.jsx";
 import ItemTable from "../components/ItemTable.jsx";
 
 const Home = () => {
@@ -15,8 +14,6 @@ const Home = () => {
     <div>
       <SearchBar item={item} handleItemInput={handleItemInput} />
       <ItemTable item={item} />
-      <br />
-      <Footer />
     </div>
   );
 };
