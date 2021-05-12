@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemCard from "./ItemCard.jsx";
 import MenuGenerator from "../apis/MenuGenerator";
 import { MenuContext } from "../context/MenuContext.js";
@@ -6,6 +6,9 @@ import useIsMount from "./useIsMount.jsx";
 
 const ItemTable = (props) => {
   const { menuItems, setMenuItems } = useContext(MenuContext);
+  // only temp menu will change when prop.items changes
+  const [tempMenu, setTempMenu] = useState([]);
+
   const isFirstRender = useIsMount();
   useEffect(() => {
     if (isFirstRender) {
@@ -14,6 +17,7 @@ const ItemTable = (props) => {
         try {
           const response = await MenuGenerator.get("/");
           console.log("ITEMTABLE: ", response.data);
+          setTempMenu(response.data.menu_item);
           setMenuItems(response.data.menu_item);
         } catch (err) {
           console.log("ERR, useMenuData.jsx: ", err);
@@ -21,26 +25,27 @@ const ItemTable = (props) => {
       };
       fetchMenuItems();
     } else {
-      // this works, but has a bug when retyping in search
-      // menuItems arr gets cleared when the item is not found
-      // ruining the data
-
-      // Next up think how to save the context data but still be able to manipulate
-      // data that is on the screen without affect it
-      setMenuItems(
+      // initially menuItem(context) has all menu items
+      // also props.item is "" initially
+      // so by using context state instead of temp state
+      // i am able to reprint the data on the screen, since context never changes
+      // (i don't use setMenuItems)
+      console.log("tempMENU: ", tempMenu);
+      setTempMenu(
         menuItems.filter((dish) => {
           return dish.item.includes(props.item);
         })
       );
     }
+    // only needs to be rendered when the user input changes
   }, [props.item]);
 
   // Need to be able to handle multiple item card coming from ItemCard component
   return (
     <div>
       <ol>
-        {menuItems &&
-          menuItems.map((cardDetail) => {
+        {tempMenu &&
+          tempMenu.map((cardDetail) => {
             return (
               <li key={cardDetail.item_id}>
                 <ItemCard
