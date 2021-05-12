@@ -1,17 +1,66 @@
-import React from "react";
-import Footer from "../components/Footer.jsx";
+import React, { useContext, useState } from "react";
+import MenuGenerator from "../apis/MenuGenerator";
+import { MenuContext } from "../context/MenuContext.js";
+
 const AddItem = () => {
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("category");
+  const [size, setSize] = useState("size");
+  const [price, setPrice] = useState("");
+
+  const { addMenuItem } = useContext(MenuContext);
+
+  const handleSubmit = async (Event) => {
+    Event.preventDefault();
+    try {
+      const response = await MenuGenerator.post("/", {
+        item: name,
+        price,
+        category,
+        size,
+      });
+
+      addMenuItem(response.data.menu_item);
+    } catch (err) {
+      console.log("ERR, AddItem.jsx: ", err);
+    }
+
+    setName("");
+    setPrice("");
+    setCategory("category");
+    setSize("size");
+  };
+
+  const handleNameInput = (Event) => {
+    setName(Event.currentTarget.value);
+  };
+
+  const handleCategoryInput = (Event) => {
+    setCategory(Event.currentTarget.value);
+  };
+
+  const handleSizeInput = (Event) => {
+    setSize(Event.currentTarget.value);
+  };
+
+  const handlePriceInput = (Event) => {
+    setPrice(Event.currentTarget.value);
+  };
+
   return (
     <>
-      <form>
-        <input
-          type="text"
-          placeholder="NAME"
-          // value={props.item}
-          // onInput={props.handleItemInput}
-        />
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input
+            type="text"
+            placeholder="NAME"
+            value={name}
+            onInput={handleNameInput}
+            required
+          />
+        </label>
         <p>
-          <select defaultValue="category">
+          <select value={category} onInput={handleCategoryInput} required>
             <option disabled value="category">
               CATEGORY
             </option>
@@ -24,7 +73,7 @@ const AddItem = () => {
           </select>
         </p>
         <p>
-          <select defaultValue="size">
+          <select value={size} onInput={handleSizeInput} required>
             <option disabled value="size">
               SIZE
             </option>
@@ -34,13 +83,19 @@ const AddItem = () => {
             <option value="Not Applicable">Not Applicable</option>
           </select>
         </p>
-        <input type="number" placeholder="PRICE" min="1" step="any" />
+        <input
+          type="number"
+          placeholder="PRICE"
+          min="1"
+          step="0.01"
+          value={price}
+          onInput={handlePriceInput}
+          required
+        />
         <p>
           <button type="submit">Submit</button>
         </p>
       </form>
-      <br />
-      <Footer />
     </>
   );
 };
