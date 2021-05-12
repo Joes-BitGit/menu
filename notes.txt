@@ -23,7 +23,9 @@ Client/front end
     Create Axios instance to generate a base url and config
     With useState to capture the data on mount with useEffect (Temporary Solution)
     implement context api for state management of the data fetching
-  NEXT UP: Fix search bar issue
+    search bar works with only the name of the menu items
+  built static version of add item page
+  NEXT UP: Functionality and data of add item page
 
   
 
