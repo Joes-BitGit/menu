@@ -49,6 +49,7 @@ const ItemTable = (props) => {
             return (
               <li key={cardDetail.item_id}>
                 <ItemCard
+                  id={cardDetail.item_id}
                   name={cardDetail.item}
                   price={cardDetail.price}
                   category={cardDetail.category}
