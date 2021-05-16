@@ -1,9 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router";
 
 const ItemCard = (props) => {
+  let history = useHistory();
+
   return (
     <>
-      <button>EDIT</button>
+      <button onClick={() => history.push(`/${props.id}/update`)}>EDIT</button>
       <button>X</button>
       <div>Name: {props.name}</div>
       <div>Category: {props.category}</div>
