@@ -16,7 +16,7 @@ const ItemTable = (props) => {
       const fetchMenuItems = async () => {
         try {
           const response = await MenuGenerator.get("/");
-          console.log("ITEMTABLE: ", response.data);
+          // console.log("ITEMTABLE: ", response.data);
           setTempMenu(response.data.menu_item);
           setMenuItems(response.data.menu_item);
         } catch (err) {

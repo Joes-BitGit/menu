@@ -65,7 +65,7 @@ const AddItem = () => {
               CATEGORY
             </option>
             <option value="meat">Meat</option>
-            <option value="marisco">Marisco</option>
+            <option value="seafood">Seafood</option>
             <option value="drinks">Drinks</option>
             <option value="dessert">Dessert</option>
             <option value="appetizers">Appetizers</option>
