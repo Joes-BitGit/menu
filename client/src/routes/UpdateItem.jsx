@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { MenuContext } from "../context/MenuContext.js";
+import React, { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router";
 import MenuGenerator from "../apis/MenuGenerator";
 
 const UpdateItem = () => {
@@ -9,10 +8,9 @@ const UpdateItem = () => {
   const [size, setSize] = useState("size");
   const [price, setPrice] = useState("");
 
-  // need context in order to update my source of truth
-  const { menuItems, setMenuItems } = useContext(MenuContext);
-  // console.log("context", menuItems);
   const { id } = useParams();
+
+  let history = useHistory();
 
   useEffect(() => {
     // fetch data from context
@@ -23,14 +21,27 @@ const UpdateItem = () => {
       setCategory(response.data.menu_item[0].category);
       setSize(response.data.menu_item[0].size);
       // getting rid of the dollar sign
+      // Number does not return NaN
       setPrice(Number(response.data.menu_item[0].price.substring(1)));
     };
     fetchData();
   }, []);
 
+  const handleUpdateItem = async (Event) => {
+    Event.preventDefault();
+    const updatedMenu = await MenuGenerator.put(`/${id}`, {
+      item: name,
+      price,
+      category,
+      size,
+      item_id: id,
+    });
+    history.push("/");
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleUpdateItem}>
         <label>
           <input
             type="text"
@@ -50,7 +61,7 @@ const UpdateItem = () => {
               CATEGORY
             </option>
             <option value="meat">Meat</option>
-            <option value="marisco">Marisco</option>
+            <option value="seafood">Seafood</option>
             <option value="drinks">Drinks</option>
             <option value="dessert">Dessert</option>
             <option value="appetizers">Appetizers</option>
