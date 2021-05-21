@@ -33,7 +33,7 @@ app.get("/api/v1/menu", async (req, res) => {
 // get a menu item
 app.get("/api/v1/menu/:item_id", async (req, res) => {
   try {
-    // CAN I SEARCH USING A TEXT OF NAME?
+    // CAN I SEARCH USING A TEXT OF NAME? Client side searching
     const results = await db.query("SELECT * FROM menu WHERE item_id=$1;", [
       req.params.item_id,
     ]);
