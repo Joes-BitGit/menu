@@ -25,7 +25,13 @@ Client/front end
     implement context api for state management of the data fetching
     search bar works with only the name of the menu items
   built static version of add item page
-  NEXT UP: Functionality and data of add item page
+  Functionality and data of add item page, use AddApp.jsx for help
+  Static version of update/delete page
+  Autofills data to the form for easier updating
+  when form is submitted send back to home page and edit in the database+context(just db as that is our source of truth which will in turn update the context when the homepage is rendered)
+  Real time delete off the home page
+  Added modal to handle the deletes more graciously instead of instantly
+  TODO: Better ways to search up items (name, alt names, category)
 
   
 
