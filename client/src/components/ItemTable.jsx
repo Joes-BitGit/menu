@@ -38,6 +38,7 @@ const ItemTable = (props) => {
       );
     }
     // only needs to be rendered when the user input changes
+    // or when the context gets updated
   }, [props.item, menuItems]);
 
   // Need to be able to handle multiple item card coming from ItemCard component
