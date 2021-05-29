@@ -33,6 +33,10 @@ Client/front end
   Added modal to handle the deletes more graciously instead of instantly
   TODO: Better ways to search up items (name, alt names, category)
 
+  DESIGN
+  make the site responsive
+  add colors
+  form redesign
   
 
 
