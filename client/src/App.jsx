@@ -4,15 +4,17 @@ import Routes from "./components/Routes.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import { MenuContextProvider } from "./context/MenuContext.js";
+import "./styles/landing.css";
 
 const App = () => {
   return (
     <MenuContextProvider>
       <Router>
-        <NavBar />
-        <Routes />
-        <br />
-        <Footer />
+        <div className="body-app">
+          <NavBar />
+          <Routes />
+          <Footer />
+        </div>
       </Router>
     </MenuContextProvider>
   );
