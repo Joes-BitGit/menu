@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar.jsx";
 
 import ItemTable from "../components/ItemTable.jsx";
 
-const Home = () => {
+const Search = () => {
   const [item, setItem] = useState("");
 
   const handleItemInput = (Event) => {
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;
