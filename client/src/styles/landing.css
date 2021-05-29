@@ -1,0 +1,26 @@
+.body-app {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  /* CSS HSL */
+  --orange-yellow-crayola: hsla(44, 86%, 70%, 1);
+  --dark-orange: hsla(30, 100%, 53%, 1);
+  --middle-blue-green: hsla(173, 44%, 73%, 1);
+  --floral-white: hsla(32, 100%, 97%, 1);
+  --space-cadet: hsla(254, 31%, 27%, 1);
+}
+
+/* ../componenets/NavBar.jsx */
+.navbar-header {
+  background: var(--middle-blue-green);
+}
+
+/* ../components/Routes.jsx */
+.main-section {
+  background: var(--floral-white);
+}
+/* ../componenets/Footer.jsx */
+.footer-content {
+  background: var(--space-cadet);
+  color: var(--floral-white);
+}
