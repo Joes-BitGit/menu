@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <address>
+    <address className="footer-content">
       You may also want to visit us:
       <br />
       La Costa Restaurant
