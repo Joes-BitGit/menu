@@ -1,7 +1,4 @@
-.body-app {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr auto;
+:root {
   /* CSS HSL */
   --orange-yellow-crayola: hsla(44, 86%, 70%, 1);
   --dark-orange: hsla(30, 100%, 53%, 1);
@@ -10,8 +7,14 @@
   --space-cadet: hsla(254, 31%, 27%, 1);
 }
 
+.body-app {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
 /* ../componenets/NavBar.jsx */
-.navbar-header {
+.navbar-container {
   background: var(--middle-blue-green);
 }
 
