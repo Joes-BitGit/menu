@@ -5,10 +5,10 @@
 .navbar {
   display: grid;
   /* logo, white space, items */
-  grid-template-columns: 0.4fr auto 1fr;
+  grid-template-columns: 0.3fr auto 1fr;
   align-items: center;
 
-  width: 90%;
+  width: 95%;
   margin: 0;
   text-align: center;
 }
@@ -22,7 +22,8 @@
 }
 
 #lacosta-logo {
-  margin-right: 50%;
+  justify-self: start;
+  padding-left: 2rem;
 }
 
 .logo-link {
@@ -54,6 +55,10 @@
     position: relative;
   }
 
+  .navbar {
+    grid-template-columns: 1fr 0.5fr;
+  }
+
   .nav-menu {
     display: grid;
     grid-template-columns: auto;
@@ -62,36 +67,59 @@
     position: absolute;
     margin: 0;
     top: 72px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
 
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
     transition: all 0.5s ease;
   }
 
   .nav-links {
     line-height: 60px;
     width: 100%;
+    color: var(--space-cadet);
     /* this fills the entire box with style */
     display: table;
   }
+
   .nav-links:hover {
     background: var(--dark-orange);
     color: var(--floral-white);
-    transition: all ease-out 0.4s;
+    transition: all ease-out 0.3s;
   }
 
   .navbar {
     width: 100%;
   }
+
   #lacosta-logo {
     margin-right: 0;
   }
 
   #mobile-menu {
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 5%;
   }
 
   .menu-toggle .bar {
     display: block;
+  }
+  .menu-toggle:hover {
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+  }
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11px);
   }
 }

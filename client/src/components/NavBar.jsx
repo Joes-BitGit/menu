@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/landing.css";
 import "../styles/navbar.css";
 
 const NavBar = () => {
+  const [menuToggle, setMenuToggle] = useState("menu-toggle");
+  const [mobileNavMenu, setMobileNavMenu] = useState("nav-menu");
+  const handleMobileClick = () => {
+    menuToggle === "menu-toggle"
+      ? setMenuToggle(`${menuToggle} is-active`)
+      : setMenuToggle("menu-toggle");
+
+    mobileNavMenu === "nav-menu"
+      ? setMobileNavMenu(`${mobileNavMenu} active`)
+      : setMobileNavMenu("nav-menu");
+  };
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -12,12 +23,16 @@ const NavBar = () => {
             La Costa
           </Link>
         </h1>
-        <div className="menu-toggle" id="mobile-menu">
+        <div
+          className={`${menuToggle}`}
+          id="mobile-menu"
+          onClick={handleMobileClick}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <ul className="nav-menu">
+        <ul className={`${mobileNavMenu}`}>
           <li>
             <Link to="/" className="nav-links">
               SEARCH
