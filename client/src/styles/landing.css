@@ -15,7 +15,7 @@
 
 /* ../componenets/NavBar.jsx */
 .navbar-container {
-  background: var(--middle-blue-green);
+  background: var(--space-cadet);
 }
 
 /* ../components/Routes.jsx */
@@ -24,6 +24,6 @@
 }
 /* ../componenets/Footer.jsx */
 .footer-content {
-  background: var(--space-cadet);
-  color: var(--floral-white);
+  background: var(--orange-yellow-crayola);
+  color: var(--space-cadet);
 }
