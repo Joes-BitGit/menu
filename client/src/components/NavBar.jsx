@@ -8,17 +8,30 @@ const NavBar = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <h1 id="lacosta-logo">
-          <Link to="/landing">La Costa</Link>
+          <Link to="/landing" className="logo-link">
+            La Costa
+          </Link>
         </h1>
+        <div className="menu-toggle" id="mobile-menu">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
         <ul className="nav-menu">
-          <li className="nav-links">
-            <Link to="/">SEARCH</Link>
+          <li>
+            <Link to="/" className="nav-links">
+              SEARCH
+            </Link>
           </li>
-          <li className="nav-links">
-            <Link to="/add">ADD</Link>
+          <li>
+            <Link to="/add" className="nav-links">
+              ADD
+            </Link>
           </li>
-          <li className="nav-links">
-            <Link to="/landing">LANDING</Link>
+          <li>
+            <Link to="/landing" className="nav-links">
+              LANDING
+            </Link>
           </li>
         </ul>
       </nav>
