@@ -1,18 +1,20 @@
 import React from "react";
+import "../styles/searchbar.css";
 
 const SearchBar = (props) => {
   return (
-    <div>
+    <div className="search-container">
       {/* SEARCH BAR */}
-      <form>
+      <form className="search-bar">
         <input
           type="text"
           placeholder="ITEM SEARCH"
+          className="input search"
           value={props.item}
           onInput={props.handleItemInput}
         />
         <p>
-          <select defaultValue="category">
+          <select defaultValue="category" className="select search">
             <option disabled value="category">
               CATEGORY
             </option>
@@ -25,8 +27,6 @@ const SearchBar = (props) => {
           </select>
         </p>
       </form>
-
-      <p>{props.item}</p>
     </div>
   );
 };
