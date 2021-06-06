@@ -5,6 +5,7 @@
   --middle-blue-green: hsla(173, 44%, 73%, 1);
   --floral-white: hsla(32, 100%, 97%, 1);
   --space-cadet: hsla(254, 31%, 27%, 1);
+  --transparent: hsla(0, 0%, 50%, 1);
 }
 
 .body-app {
