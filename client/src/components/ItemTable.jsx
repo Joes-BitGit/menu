@@ -3,7 +3,7 @@ import ItemCard from "./ItemCard.jsx";
 import MenuGenerator from "../apis/MenuGenerator";
 import { MenuContext } from "../context/MenuContext.js";
 import useIsMount from "./useIsMount.jsx";
-
+import "../styles/table.css";
 const ItemTable = (props) => {
   const { menuItems, setMenuItems } = useContext(MenuContext);
   // only temp menu will change when prop.items changes
@@ -44,7 +44,7 @@ const ItemTable = (props) => {
   // Need to be able to handle multiple item card coming from ItemCard component
   return (
     <div>
-      <ol>
+      <ol className="table-container">
         {tempMenu &&
           tempMenu.map((cardDetail) => {
             return (
