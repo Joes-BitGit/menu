@@ -1,0 +1,31 @@
+:root {
+  /* CSS HSL */
+  --orange-yellow-crayola: hsla(44, 86%, 70%, 1);
+  --dark-orange: hsla(30, 100%, 53%, 1);
+  --middle-blue-green: hsla(173, 44%, 73%, 1);
+  --floral-white: hsla(32, 100%, 97%, 1);
+  --space-cadet: hsla(254, 31%, 27%, 1);
+  --transparent: hsla(0, 0%, 50%, 1);
+}
+
+.body-app {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ../componenets/NavBar.jsx */
+.navbar-container {
+  background: var(--space-cadet);
+}
+
+/* ../components/Routes.jsx */
+.main-section {
+  background: var(--floral-white);
+  display: grid;
+}
+/* ../componenets/Footer.jsx */
+.footer-content {
+  background: var(--orange-yellow-crayola);
+  color: var(--space-cadet);
+}

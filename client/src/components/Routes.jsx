@@ -4,7 +4,7 @@ import AddItem from "../routes/AddItem";
 import UpdateItem from "../routes/UpdateItem";
 import Search from "../routes/Search";
 import Landing from "../routes/Landing";
-import "../styles/landing.css";
+import "../styles/general.css";
 
 const Routes = () => {
   return (

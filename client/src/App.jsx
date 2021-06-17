@@ -4,7 +4,7 @@ import Routes from "./components/Routes.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import { MenuContextProvider } from "./context/MenuContext.js";
-import "./styles/landing.css";
+import "./styles/general.css";
 
 const App = () => {
   return (
