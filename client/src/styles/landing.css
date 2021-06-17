@@ -1,30 +1,25 @@
-:root {
-  /* CSS HSL */
-  --orange-yellow-crayola: hsla(44, 86%, 70%, 1);
-  --dark-orange: hsla(30, 100%, 53%, 1);
-  --middle-blue-green: hsla(173, 44%, 73%, 1);
-  --floral-white: hsla(32, 100%, 97%, 1);
-  --space-cadet: hsla(254, 31%, 27%, 1);
-  --transparent: hsla(0, 0%, 50%, 1);
-}
-
-.body-app {
+.title-wrapper {
   display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  place-items: center;
 }
 
-/* ../componenets/NavBar.jsx */
-.navbar-container {
-  background: var(--space-cadet);
+.title {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  row-gap: 20%;
 }
 
-/* ../components/Routes.jsx */
-.main-section {
-  background: var(--floral-white);
+.cta-btn {
+  border-radius: 10px;
+  border: 0.25rem solid var(--middle-blue-green);
+  background: var(--middle-blue-green);
 }
-/* ../componenets/Footer.jsx */
-.footer-content {
-  background: var(--orange-yellow-crayola);
-  color: var(--space-cadet);
+
+.cta-btn:hover {
+  cursor: pointer;
+  border: 0.25rem solid var(--dark-orange);
+  background: var(--dark-orange);
+  color: var(--floral-white);
+  transition: all ease-out 0.3s;
 }
