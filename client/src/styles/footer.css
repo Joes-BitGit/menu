@@ -1,0 +1,17 @@
+.footer-content {
+  display: grid;
+  place-items: center;
+  padding: 1%;
+}
+
+.location {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: darkslategray;
+}
+
+.location:hover {
+  text-decoration: underline;
+  color: var(--space-cadet);
+}
