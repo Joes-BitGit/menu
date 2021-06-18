@@ -8,12 +8,14 @@
   place-items: center;
   margin: 0;
   row-gap: 20%;
+  font-size: 1.5rem;
 }
 
 .cta-btn {
-  border-radius: 10px;
+  border-radius: 25px;
   border: 0.25rem solid var(--middle-blue-green);
   background: var(--middle-blue-green);
+  padding: 2%;
 }
 
 .cta-btn:hover {
