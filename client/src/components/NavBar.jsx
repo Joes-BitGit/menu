@@ -20,7 +20,7 @@ const NavBar = () => {
       <nav className="navbar">
         <h1 id="lacosta-logo">
           <Link to="/landing" className="logo-link">
-            La Costa
+            La Costa 🏖
           </Link>
         </h1>
         <div

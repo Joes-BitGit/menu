@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <div className="title-wrapper">
       <h1 className="title">
-        Welcome to La Costa 🏝 🌊
+        Welcome to La Costa 🌊 🏝
         <button className="cta-btn">See Menu</button>
       </h1>
     </div>
