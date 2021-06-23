@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import MenuGenerator from "../apis/MenuGenerator";
 import { MenuContext } from "../context/MenuContext.js";
+import "../styles/addpage.css";
 
 const AddItem = () => {
   const [name, setName] = useState("");
@@ -48,41 +49,49 @@ const AddItem = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="text"
-            placeholder="NAME"
-            value={name}
-            onInput={handleNameInput}
-            required
-          />
-        </label>
-        <p>
-          <select value={category} onInput={handleCategoryInput} required>
-            <option disabled value="category">
-              CATEGORY
-            </option>
-            <option value="meat">Meat</option>
-            <option value="seafood">Seafood</option>
-            <option value="drinks">Drinks</option>
-            <option value="dessert">Dessert</option>
-            <option value="appetizers">Appetizers</option>
-            <option value="breakfast">Breakfast</option>
-          </select>
-        </p>
-        <p>
-          <select value={size} onInput={handleSizeInput} required>
-            <option disabled value="size">
-              SIZE
-            </option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="Not Applicable">Not Applicable</option>
-          </select>
-        </p>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="form-inputs">
+        <input
+          type="text"
+          placeholder="NAME"
+          value={name}
+          onInput={handleNameInput}
+          required
+          className="name input-add"
+        />
+
+        <select
+          value={category}
+          onInput={handleCategoryInput}
+          required
+          className="category input-add"
+        >
+          <option disabled value="category">
+            CATEGORY
+          </option>
+          <option value="meat">Meat</option>
+          <option value="seafood">Seafood</option>
+          <option value="drinks">Drinks</option>
+          <option value="dessert">Dessert</option>
+          <option value="appetizers">Appetizers</option>
+          <option value="breakfast">Breakfast</option>
+        </select>
+
+        <select
+          value={size}
+          onInput={handleSizeInput}
+          required
+          className="size input-add"
+        >
+          <option disabled value="size">
+            SIZE
+          </option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+          <option value="Not Applicable">Not Applicable</option>
+        </select>
+
         <input
           type="number"
           placeholder="PRICE"
@@ -91,12 +100,14 @@ const AddItem = () => {
           value={price}
           onInput={handlePriceInput}
           required
+          className="price input-add"
         />
-        <p>
-          <button type="submit">Submit</button>
-        </p>
+
+        <button type="submit" className="submission input-add">
+          SUBMIT
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 
