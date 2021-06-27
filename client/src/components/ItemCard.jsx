@@ -5,6 +5,8 @@ import { MenuContext } from "../context/MenuContext";
 
 import Modal from "./Modal.jsx";
 
+import "../styles/itemcard.css";
+
 const ItemCard = (props) => {
   const [show, setShow] = useState(false);
   let history = useHistory();
@@ -38,12 +40,21 @@ const ItemCard = (props) => {
       >
         <p>Are you sure you would like to delete this item?</p>
       </Modal>
-      <button onClick={() => history.push(`/${props.id}/update`)}>EDIT</button>
-      <button onClick={showModal}>X</button>
+      <div className="btns-container">
+        <button
+          onClick={() => history.push(`/${props.id}/update`)}
+          className="edit-button"
+        >
+          EDIT
+        </button>
+        <button onClick={showModal} className="delete-button">
+          X
+        </button>
+      </div>
       <div>Name: {props.name}</div>
       <div>Category: {props.category}</div>
-      <div className="">SIZE: {props.size} </div>
-      <div className="">price: {props.price}</div>
+      <div>SIZE: {props.size} </div>
+      <div>price: {props.price}</div>
       <br />
     </>
   );
