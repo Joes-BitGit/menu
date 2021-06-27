@@ -14,7 +14,7 @@ const SearchBar = (props) => {
           onInput={props.handleItemInput}
         />
 
-        <select defaultValue="category" className="select search">
+        {/* <select defaultValue="category" className="select search">
           <option disabled value="category">
             CATEGORY
           </option>
@@ -24,7 +24,7 @@ const SearchBar = (props) => {
           <option value="dessert">Dessert</option>
           <option value="appetizers">Appetizers</option>
           <option value="breakfast">Breakfast</option>
-        </select>
+        </select> */}
       </form>
     </div>
   );
