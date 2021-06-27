@@ -1,0 +1,31 @@
+.delete-button {
+  background: rgb(224, 1, 1);
+  color: var(--floral-white);
+  border: solid rgb(224, 1, 1);
+  border-radius: 3px;
+  margin-right: 25%;
+  /* left-right top-bottom blurriness color */
+  box-shadow: 2px 2px 1px var(--transparent);
+  font-weight: bold;
+}
+
+.edit-button {
+  background: rgb(250, 250, 1);
+  color: var(--space-cadet);
+  border-radius: 3px;
+  border: solid rgb(250, 250, 1);
+  box-shadow: 2px 2px 1px var(--transparent);
+  font-weight: bold;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button:active {
+  border-style: inset;
+}
+button:hover {
+  cursor: pointer;
+}
